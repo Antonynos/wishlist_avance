@@ -24,3 +24,10 @@ Route::get('/produtos/{id}', 'ProdutosController@show');
 Route::post('/produtos', 'ProdutosController@create_produto');
 Route::put('/produtos/{id}', 'ProdutosController@update_produto');
 Route::delete('/produtos/{id}', 'ProdutosController@delete_produto');
+
+//WISHLIST
+Route::get('/wishlist', 'WishlistController@index');
+Route::get('/wishlist/{id}', 'WishlistController@show');
+Route::post('/wishlist', 'WishlistController@create_wishlist');
+Route::put('/wishlist/{id}', 'WishlistController@update_wishlist');
+Route::delete('/wishlist/{id}', 'WishlistController@delete_wishlist');

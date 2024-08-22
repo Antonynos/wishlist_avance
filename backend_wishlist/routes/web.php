@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 //PRODUTOS
 Route::resource('produtos', 'ProdutosController');
+
+//WISHLIST
+Route::resource('wishlist', 'WishlistController');
