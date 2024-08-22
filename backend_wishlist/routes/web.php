@@ -22,3 +22,6 @@ Route::resource('produtos', 'ProdutosController');
 
 //WISHLIST
 Route::resource('wishlist', 'WishlistController');
+
+//WISHLISTPRODUTO
+Route::resource('wishlist_produto', 'WishlistProdutoController');

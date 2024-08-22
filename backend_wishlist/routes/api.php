@@ -28,6 +28,15 @@ Route::delete('/produtos/{id}', 'ProdutosController@delete_produto');
 //WISHLIST
 Route::get('/wishlist', 'WishlistController@index');
 Route::get('/wishlist/{id}', 'WishlistController@show');
+Route::get('/wishlist_contents/{id}', 'WishlistController@show_produto_by_wishlist');
 Route::post('/wishlist', 'WishlistController@create_wishlist');
 Route::put('/wishlist/{id}', 'WishlistController@update_wishlist');
 Route::delete('/wishlist/{id}', 'WishlistController@delete_wishlist');
+
+
+//WISHLISTPRODUTO
+Route::get('/wishlist_produto', 'WishlistProdutoController@index');
+Route::get('/wishlist_produto/{id}', 'WishlistProdutoController@show');
+Route::post('/wishlist_produto', 'WishlistProdutoController@create_wishlist_produto');
+Route::put('/wishlist_produto/{id}', 'WishlistProdutoController@update_wishlist_produto');
+Route::delete('/wishlist_produto/{id}', 'WishlistProdutoController@delete_wishlist_produto');
