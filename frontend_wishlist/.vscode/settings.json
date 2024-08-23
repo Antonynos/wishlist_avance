@@ -1,0 +1,14 @@
+{
+    "eslint.nodePath": "D:\\Programacao\\Codigos\\wishlist_avance\\frontend_wishlist",
+    
+    "files.eol": "\n",
+    
+    "editor.tabSize": 2,
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+
+    },
+
+    "eslint.validate": ["javascript"]
+}
