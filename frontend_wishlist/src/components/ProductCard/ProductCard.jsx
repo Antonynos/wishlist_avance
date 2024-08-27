@@ -44,6 +44,7 @@ function ProductCard({data}) {
         <section className="product__card">
             <img 
                 src={foto}
+                onError='https://lightwidget.com/wp-content/uploads/localhost-file-not-found-480x480.avif'
                 alt="product"
                 className="product__image"
             />
