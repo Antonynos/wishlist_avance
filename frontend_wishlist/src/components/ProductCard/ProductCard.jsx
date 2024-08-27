@@ -1,12 +1,10 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useContext} from "react";
 import {LuListPlus} from 'react-icons/lu';
 
-import CallBackendPOST from "../../api/CallBackend";
 import AppContext from '../../context/AppContext';
 
 
 import './ProductCard.css';
-import AddWishlistMenu from "../AddWishlistMenu/AddWishlistMenu";
 
 
 function ProductCard({data}) {
