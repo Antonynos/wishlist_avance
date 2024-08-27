@@ -21,13 +21,16 @@ class WishlistController extends Controller
 
     public function show_produto_by_wishlist($id){
         $wishlist= Wishlist::find($id);
+        $arrayProduto = array();
 
         $wishlist_produto = WishlistProduto::where('wishlist_id', $wishlist->id)->get();
         foreach($wishlist_produto as $elemento_wishlist){
-            $produto[] = Produtos::find($elemento_wishlist->produtos_id);
+            $produto = Produtos::find($elemento_wishlist->produtos_id);
+            $produto->wishlist_produto_id = $elemento_wishlist->id;
+            $arrayProduto[] = $produto;
         }
 
-        return response()->json($produto, 200);
+        return response()->json($arrayProduto, 200);
     }
 
     public function create_wishlist(Request $request){
