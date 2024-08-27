@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import {LuListPlus} from 'react-icons/lu';
 
 import CallBackendPOST from "../../api/CallBackend";
+import AppContext from '../../context/AppContext';
 
 
 import './ProductCard.css';
@@ -10,16 +11,7 @@ import AddWishlistMenu from "../AddWishlistMenu/AddWishlistMenu";
 
 function ProductCard({data}) {
     const {id, nome, foto} = data;
-    //const [isOpen, setIsOpen] = useState(false);
-
-        // useEffect(()=>{ 
-        //     setWishlists(CallBackendGET('wishlist'));
-        // }, [isOpen == true])
-        // console.log(wishlists);
-
-    // const ShowWishlist = () =>{
-    //     setIsOpen(!isOpen);
-    // }
+    const { isChange, setIsChange} = useContext(AppContext);
 
     const addWishlist = async () =>{
             
@@ -33,7 +25,7 @@ function ProductCard({data}) {
                 'Content-type': 'application/json; charset=UTF-8',
             },
             })
-            .then((response) => response.json())
+            .then((response) => response.json(), setIsChange(!isChange))
             .then((data) => {})
             .catch((err) => {
                 console.log(err.message);

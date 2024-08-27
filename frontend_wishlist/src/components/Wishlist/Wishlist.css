@@ -17,3 +17,8 @@
 .wishlist__open{
     transform: translate(0, 0);
 }
+
+.wishlist__items{
+    flex-grow: 1;
+    overflow: auto;
+}

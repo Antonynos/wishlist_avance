@@ -5,10 +5,13 @@ import AppContext from './AppContext';
 function Provider({ children }) {
 
     const [isWishlistOpen, setIsWishlistOpen] = useState(false);
+    const [isChange, setIsChange] = useState(false);
 
     const value = {
         isWishlistOpen, 
         setIsWishlistOpen,
+        isChange,
+        setIsChange
     }
 
     return( 

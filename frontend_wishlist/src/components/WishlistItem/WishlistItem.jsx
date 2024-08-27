@@ -1,19 +1,22 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useContext} from "react";
 import {MdOutlinePlaylistRemove} from 'react-icons/md'
+import AppContext from '../../context/AppContext';
 
 import "./WishlistItem.css";
 
 function WishlistItem({data}) {
-    const {wishlist_produto_id, foto, nome} = data;
+    const {id, foto, nome} = data;
+
+    const { isChange, setIsChange} = useContext(AppContext);
 
     const RemoveItem = async () =>{
-            alert(wishlist_produto_id);
-            await fetch(`http://localhost:8000/api/wishlist_produto/${wishlist_produto_id}`, {
+            await fetch(`http://localhost:8000/api/wishlist_produto/${id}`, {
                 method: 'DELETE',
             }).then((response) => {
             // if (response.status !== 200) {
             //     return;
             // }
+            setIsChange(!isChange);
         });
     }
 
