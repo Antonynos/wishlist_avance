@@ -26,7 +26,8 @@ class WishlistController extends Controller
         $wishlist_produto = WishlistProduto::where('wishlist_id', $wishlist->id)->get();
         foreach($wishlist_produto as $elemento_wishlist){
             $produto = Produtos::find($elemento_wishlist->produtos_id);
-            $produto->wishlist_produto_id = $elemento_wishlist->id;
+            $produto->produto_id = $produto->id;
+            $produto->id = $elemento_wishlist->id;
             $arrayProduto[] = $produto;
         }
 
